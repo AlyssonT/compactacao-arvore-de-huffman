@@ -85,6 +85,7 @@ HuffManTree::HuffManTree(int freq[256]){        //construtor da arvore de Huffma
     }
 
     Tree junta1,junta2;
+    
     while(lista.size() > 1){        //junta todas as arvores criando apenas uma, com todos os caracteres
         junta1=Tree(lista.top());
         lista.pop();
@@ -95,7 +96,7 @@ HuffManTree::HuffManTree(int freq[256]){        //construtor da arvore de Huffma
     }
 
     ans=lista.top();
-
+    
     Tree aux(1,'\n');          //caso há apenas um caracter no arquivo, inserir um nodo com '\n' na arvore
     if(!ans.raiz->vazio){
         ans.merge(aux);
